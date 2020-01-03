@@ -1,15 +1,32 @@
+`*`- New point , `#` - explaining about the code or sometimes the concepts 
+Refered Link :- https://devhints.io/bash
+
 * env - when user enter this command then it showing all environment variables inside the /etc/passwd. and also showing the shell name for e.g bash,zsh
 * consider one example file name:-  environmentVariable.sh
 -------------------------
 	#!/bin/zsh
 	echo $hello #Here hello is an environment variable name
 -------------------------
-# Above example content one variable name `$hello`. and if you run the file "./environmentVariable.sh" then you will get the blank output. so first we need to assign some value to the `$hello` variable. To assign the value to env variable is :- "export env hello=Myvalue". and then you run the "./environmentVariable.sh" script then you will get the output as `Myvalue`
+# Above example content one variable name `$hello`. and if you run the file "./environmentVariable.sh" then you will get the blank output. so first we need 
+to assign some value to the `$hello` variable. To assign the value to env variable is :- "export env hello=Myvalue". and then you run the 
+"./environmentVariable.sh" script then you will get the output as `Myvalue`
 
-* So now if you want to unset the variable then just type the "unset hello" and after this when you run the "./environmentVariable.sh" then you will get the blank output.
+* So now if you want to unset the variable then just type the "unset hello" and after this when you run the "./environmentVariable.sh" then you will get 
+the blank output.
 
-* If suppose already existing environment variable holding some path and you want to overload the another path to same variable without loosing existing path then use this:-
+* If suppose already existing environment variable holding some path and you want to overload the another path to same variable without loosing existing 
+path then use this:-
 # export hello=$hello : "New value"
 -- So the output is like :- Myvalue: New Value
 
-* What is reason behind the `export` keyword :- Suppose user change the shell using `bash` command then previous shell stored path is not working in new shell. but if you set the path using `export` keyword then it works on every shell.
+* What is reason behind the `export` keyword :- Suppose user change the shell using `bash` command then previous shell stored path is not working in 
+new shell. but if you set the path using `export` keyword then it works on every shell.
+
+* Consider the following example:
+----------------------------------
+#!/bin/bash
+NAME="Jhon"
+echo "Hello $NAME"
+---------------------------------
+# In above example we declare one variable name is `NAME` and assign some value to it. here is one rule when you decleare variable and assign some value then
+DON'T give space between them. If you write like this -> `NAME = "Jhon"` then it gives an error -> `command not found: NAME`

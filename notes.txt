@@ -30,3 +30,13 @@ echo "Hello $NAME"
 ---------------------------------
 # In above example we declare one variable name is `NAME` and assign some value to it. here is one rule when you decleare variable and assign some value then
 DON'T give space between them. If you write like this -> `NAME = "Jhon"` then it gives an error -> `command not found: NAME`
+
+* Quotation is very important part in the shell scripting follow the code:
+-------------------------
+#!/bin/bash
+NAME="Jhon"
+echo "Hi $NAME"
+echo 'Hi $NAME'
+-------------------------
+# In above example we declare one variable call `NAME` and while printing in first line `""` so its print o/p- Hi Jhon and in second 
+line `''` so it print o/p- Hi $NAME. So inside the `""` will print the string, and `''` will print the variable name as it is. 

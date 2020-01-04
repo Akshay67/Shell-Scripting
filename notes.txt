@@ -40,3 +40,63 @@ echo 'Hi $NAME'
 -------------------------
 # In above example we declare one variable call `NAME` and while printing in first line `""` so its print o/p- Hi Jhon and in second 
 line `''` so it print o/p- Hi $NAME. So inside the `""` will print the string, and `''` will print the variable name as it is. 
+
+* So now we learn some concepts like how to declare the function,what is command line argument etc. follow the below code:-
+---------------------------------------------------------------------------------
+#!/bin/bash
+
+my_function()
+{
+	echo "This is first first function"
+}
+
+script_name=$0
+command_line_arg1=$1
+command_line_arg2=$2
+
+my_function
+echo "This is my script Name:-> $script_name"
+echo "This is my script Name:-> $script_name  <-:to learn the scripting"
+echo "First command line agrument is = $command_line_arg1"
+echo "Second command line argument is = $command_line_arg2"
+---------------------------------------------------------------------------------
+
+# So now let's dive into the above program- In shell scripting when we declare the function then its simple to declare like just give the name of the function 
+and start writing the code inside the body for more reference in above example `my_function()` is function and it print only the message.
+# Next new concept is command line argument so here is fix pattern `$0`- means always script name and after script name when you pass more arg with space then 
+its always count as a new argument.so lets consider the above example:- we store the $1,$2 into two seperate variables so whenever user pass the two argument 
+with the space after the script then it will shows the respected output. suppose user run `./scriptname hello world` like this so output is like:
+$0 -> scriptname
+$1 -> hello
+$2 -> world
+
+* How to Debug the program in shell scripting :- so when you write this line `#!/bin/bash` then just write the `-x` after this,and run the script.
+
+* More deep about command line argument options with example:-
+-----------------------------------------------------------------
+#!/bin/bash
+
+echo "script name with path-> $0"
+echo "script name without path-> `basename $0`"
+echo "First Argument:- $1"
+echo "Second Argument:- $2"
+echo "Third Argument:- $3"
+echo "Total number of argument used:- $#"
+echo "List of argument used:- $@"
+echo "List of argument used:- $*"
+----------------------------------------------------------------
+!!! OUTPUT !!!
+----------------------------------------------------------------
+!!! RUN -> ./command_line_arg1.sh arg1 arg2 arg3 arg4 
+script name with path-> ./command_line_arg1.sh
+script name without path-> command_line_arg1.sh
+First Argument:- arg1
+Second Argument:- arg2
+Third Argument:- arg3
+Total number of argument used:- 4
+List of argument used:- arg1 arg2 arg3 arg4
+List of argument used:- arg1 arg2 arg3 arg4
+----------------------------------------------------------------
+# So in command line argument there are more operations like:- #,@,*. So if you want to show the total number/count of arg used then you can use `#` and if you want
+to show the which arguments you are used in the program then use `@ or *`.
+* If you want to print the current file name without printing the path then use a keyword `basename $0`. 
